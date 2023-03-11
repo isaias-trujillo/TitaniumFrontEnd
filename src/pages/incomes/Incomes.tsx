@@ -17,7 +17,7 @@ type Props = {
 }
 
 export default function Incomes({name, onLogout}: Props) {
-    const [records, setRecords] = useState<Array<ParsedIncome>>([])
+    const [incomes, setIncomes] = useState<Array<ParsedIncome>>([])
     const [plans, setPlans] = useState<Array<PlanResponse>>([])
     const [clients, setClients] = useState<Array<ClientResponse>>([])
     const [loading, setLoading] = useState(false)
@@ -25,7 +25,7 @@ export default function Incomes({name, onLogout}: Props) {
     useEffect(() => {
             setLoading(true)
             fetchIncomesApi().then((res) => {
-                setRecords(res)
+                setIncomes(res)
             }).then(() => fetchClientsApi())
                 .then((res) => setClients(res))
                 .then(() => fetchPlansApi())
@@ -40,7 +40,7 @@ export default function Incomes({name, onLogout}: Props) {
             <IncomesContent
                 table={{
                     columns: tableColumns,
-                    records: records
+                    records: incomes
                 }}
                 loading={loading}
                 plans={plans}

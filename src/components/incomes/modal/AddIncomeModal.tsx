@@ -10,6 +10,9 @@ import onPostIncome from "../../../fetching/post/action/onPostIncome";
 import {IncomeType} from "../../../fetching/shared/IncomeType";
 import ClientResponse from "../../../fetching/get/res/ClientResponse";
 import formattedDate from "../../../utils/FormattedDate";
+import Loading from "../../shared/loading/Loading";
+import Error from "../../shared/error/Error";
+import Success from "../../shared/success/Success";
 
 type Props = {
     onCancel: MouseEventHandler<HTMLButtonElement>,
@@ -20,6 +23,9 @@ type Props = {
 export default function AddIncomeModal({onCancel, plans, clients}: Props) {
     const dniRef = useRef<HTMLInputElement>(null)
     const [selectedIndex, setSelectedIndex] = useState(-1)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
+    const [success, setSuccess] = useState("")
 
     return (
         <div id={"modal"}>
@@ -49,8 +55,25 @@ export default function AddIncomeModal({onCancel, plans, clients}: Props) {
                                         ClienteId: clients.filter(({DNI}) => DNI === dniRef?.current?.value).map(({ClienteId}) => ClienteId)[0] || -1,
                                         MontoTotal: parseInt(plans[selectedIndex]?.Precio) || 0,
                                         Fecha: formattedDate(now),
-                                    }).then((res) => console.log(res))
+                                    }).then((res) => {
+                                        setLoading(true)
+                                        if (res.ok) {
+                                            setSuccess('Ingreso añadido')
+                                            setError("")
+                                            return null
+                                        } else {
+                                            setSuccess("")
+                                            res.json().then((data) => setError(data.toString()))
+                                        }
+                                    }).catch((err) => {
+                                        setError(err)
+                                    }).finally(() => setLoading(false))
                                 }}/>
+                    </div>
+                    <div id={"results"}>
+                        {loading && <Loading name={"Registrando"}/>}
+                        {error && <Error message={error}/>}
+                        {success && <Success message={success}/>}
                     </div>
                 </div>
             </div>
