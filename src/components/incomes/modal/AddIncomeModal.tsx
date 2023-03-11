@@ -47,7 +47,7 @@ export default function AddIncomeModal({onCancel, plans, clients}: Props) {
                                         TipoIngreso: IncomeType.Plans,
                                         UsuarioId: 14,
                                         ClienteId: clients.filter(({DNI}) => DNI === dniRef?.current?.value).map(({ClienteId}) => ClienteId)[0] || -1,
-                                        MontoTotal: parseInt(plans[selectedIndex].Precio) || 0,
+                                        MontoTotal: parseInt(plans[selectedIndex]?.Precio) || 0,
                                         Fecha: formattedDate(now),
                                     }).then((res) => console.log(res))
                                 }}/>

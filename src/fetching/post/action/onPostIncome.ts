@@ -3,8 +3,11 @@ import IncomeRequest from "../req/IncomeRequest";
 
 export default async function onPostIncome(request: IncomeRequest) {
     return await fetchOnPost({
-        url: 'http://localhost:3031/api/ingresos',
+        url: 'https://apim-titaniumgym-prod-001.azure-api.net/rs-ne-gestion-de-planes/servicio-de-ingresos/v1/ingresos',
         request: request
+    }).then((res) => {
+        console.log(request)
+        return res
     }).then((res) => (
         {
             ok: res.ok,
