@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.82db975a.css",
+    "main.js": "/static/js/main.f083e33a.js",
+    "static/media/Basílica_Catedral_Metropolitana_de_Lima_04 (1).jpg": "/static/media/Basílica_Catedral_Metropolitana_de_Lima_04 (1).bf65ce74e5d305c30d7c.jpg",
+    "static/media/aside.jpg": "/static/media/aside.1218f47edc16cd5e56ba.jpg",
+    "static/media/pawel-czerwinski-5QnkRk4-zcY-unsplash.jpg": "/static/media/pawel-czerwinski-5QnkRk4-zcY-unsplash.3ccca29408a86f9c5c83.jpg",
+    "static/media/anastase-maragos-4dlhin0ghOk-unsplash.jpg": "/static/media/anastase-maragos-4dlhin0ghOk-unsplash.817776ae12f24ee88e9d.jpg",
+    "static/media/cardiology_FILL0_wght400_GRAD0_opsz48.svg": "/static/media/cardiology_FILL0_wght400_GRAD0_opsz48.1f071b906107411bacb0.svg",
+    "index.html": "/index.html",
+    "static/media/trending_up_FILL0_wght400_GRAD0_opsz48.svg": "/static/media/trending_up_FILL0_wght400_GRAD0_opsz48.e3beca269b649357c7ae.svg",
+    "static/media/near_me_FILL0_wght400_GRAD0_opsz48.svg": "/static/media/near_me_FILL0_wght400_GRAD0_opsz48.c8c1bd6dcf7f99567517.svg",
+    "static/media/done-gold.svg": "/static/media/done-gold.6b6ccba2302cc2cb3d13.svg",
+    "static/media/done-purple.svg": "/static/media/done-purple.e075c599460cd2d7e23a.svg",
+    "static/media/done-white.svg": "/static/media/done-white.6107cac187e043440165.svg",
+    "main.82db975a.css.map": "/static/css/main.82db975a.css.map",
+    "main.f083e33a.js.map": "/static/js/main.f083e33a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82db975a.css",
+    "static/js/main.f083e33a.js"
+  ]
+}
